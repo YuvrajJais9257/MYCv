@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+$primary-color: #003147;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1000px;
+  background: #fff;
+  margin: 51px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+
+  .left_side {
+    position: relative;
+    background: $primary-color;
+    padding: 41px;
+  }
+
+  .right_side {
+    position: relative;
+    background: #ffff;
+    padding: 41px;
+  }
+
+  .profile-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 21px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .imgBx {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h2{
+        color: #fff;
+        font-size: 1.5em;
+        margin-top: 21px;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1.4em;
+        span{
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+    }
+  }
+}
+
+.contact-info{
+    padding-top: 41px;
+    &.languages{
+      .percent{
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: #081921;
+        display: block;
+        margin-top: 5px;
+        div{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: #03a9f4;
+        }
+      }
+    }
+    &.education{
+      li {
+        margin-bottom: 15px;
+      }
+      h5 {
+        color: #03a9f4;
+        font-weight: 500;
+      }
+      h4 {
+        color: #fff;
+        font-weight: 300;
+    
+        &:nth-child(2) {
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+    ul{
+        position: relative;
+        li{
+            list-style: none;
+            position: relative;
+            margin: 10px 0;
+            cursor: pointer;
+            .icon{
+                display: inline-block;
+                width: 30px;
+                font-size: 18px;
+                color: #03a9f4;
+            }
+            span{
+                color: #fff;
+                
+            }
+        }
+    }
+}
+
+.about{
+  margin-bottom: 50px;
+  .box{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    .text{
+      h4{
+        text-transform: uppercase;
+        color: #2a7da2;
+        font-size: 16px;
+      }
+    }
+    .year_company{
+      min-width: 150px;
+      h5{
+        text-transform: uppercase;
+        color: #848c90;
+        font-weight: 600;
+      }
+    }
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.skills{
+  .box{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+    .percent{
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background: #f0f0f0;
+      div{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #03a9f4;
+      }
+    }
+    h4{
+      text-transform: uppercase;
+      color: #848c99;
+      font-weight: 500;
+    }
+  }
+}
+
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 21px;
+}
+
+.title2{
+  color: #003147;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+p{
+  color: #333;
+}
+
+.interest{
+  ul{
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    li{
+      list-style: none;
+      color: #333;
+      font-weight: 500;
+      margin: 10px 0;
+      .icon{
+        color: #03a9f4;
+        font-size: 18px;
+        width: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  } 
+
+  .interest {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// For max-width: 600px
+@media (max-width: 600px) {
+  .about {
+    .box {
+      flex-direction: column;
+
+      .year_company {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .interest {
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .skills {
+    .box {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
